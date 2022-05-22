@@ -14,7 +14,13 @@ class DB
     {
         $sth = $this->dbh->prepare($sql);
         $sth->execute($data);
-        return $sth->fetchAll(PDO::FETCH_OBJ);
+        return $sth->fetchAll(PDO::FETCH_CLASS, $class);
+    }
+
+    public function execute(string $sql, array $data = []): bool
+    {
+        $sth = $this->dbh->prepare($sql);
+        return $sth->execute($data);
     }
 
 }
