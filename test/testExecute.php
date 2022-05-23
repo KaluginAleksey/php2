@@ -6,7 +6,12 @@ require_once __DIR__ . '/../App/Person.php';
 
 $db = new DB();
 
-$sql = 'INSERT INTO persons (name, age) VALUES (:name, :age)';
-$data = [':name' => 'Синицын', ':age' => 28];
+$sql = 'INSERT INTO news (title, text, author, date) VALUES (:title, :text, :author, :date)';
+$data = [
+    ':title' => 'Тестовый заголовок',
+    ':text' => 'В лесу родилась ёлочка',
+    ':author' => 'Василий',
+    ':date' => '2022-05-23',
+    ];
 
 var_dump($db->execute($sql, $data));
