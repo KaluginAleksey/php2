@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . '/App/Article.php';
+require_once __DIR__ . '/autoload.php';
 
-$news = Article::findLast();
+$news = \App\Article::findLast();
 
 include __DIR__ . '/templates/index.php';
 
