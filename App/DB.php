@@ -8,8 +8,8 @@ class DB
 
     public function __construct()
     {
-        $config = require_once __DIR__ . '/../Data/config.php';
-        $this->dbh = new \PDO($config['dsn'], $config['user'], $config['password']);
+        $config = new Config();
+        $this->dbh = new \PDO($config->data['db']['dsn'], $config->data['db']['user'], $config->data['db']['password']);
     }
 
     public function query(string $sql, array $data = [], string $class = \stdClass::class): array|false
