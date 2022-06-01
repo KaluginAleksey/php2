@@ -31,4 +31,21 @@ abstract class Model
         return empty($data) ? false : $data[0];
     }
 
+    public function update()
+    {
+        $data = [];
+        $sets = [];
+        foreach (get_object_vars($this) as $prop => $value) {
+            $data[':' . $prop] = $value;
+            if ('id' == $prop) {
+                continue;
+            }
+            $sets[] = $prop . '=:' . $prop;
+        }
+
+        $sql = 'UPDATE ' . static::$table . ' SET ' . implode(',', $sets) . ' WHERE id=:id';
+        $db = new DB();
+        $db->execute($sql, $data);
+    }
+
 }
