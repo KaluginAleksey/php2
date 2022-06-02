@@ -8,12 +8,15 @@
     <title>News</title>
 </head>
 <body>
-<a href="/php2/Controllers/admin.php">Админка</a>
+<a href="/php2/">На главную</a>
 <?php foreach ($news as $article): ?>
     <a href="/php2/article.php?id=<?php echo $article->id; ?>">
         <h3><?php echo $article->title; ?></h3>
     </a>
     <p><?php echo mb_substr($article->text, 0, 300) . '...' ?></p>
+    <a href="/php2/Controllers/change.php?id=<?php echo $article->id; ?>">Изменить</a>
+    <a href="#">Удалить</a>
 <?php endforeach; ?>
+<a href="#">Добавить новую статью</a>
 </body>
 </html>
