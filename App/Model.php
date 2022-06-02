@@ -48,4 +48,26 @@ abstract class Model
         $db->execute($sql, $data);
     }
 
+    public function insert()
+    {
+        $data = [];
+        $sets = [];
+        foreach (get_object_vars($this) as $prop => $value) {
+
+            if ('id' == $prop) {
+                continue;
+            }
+            if ('date' == $prop) {
+                $data[':' . $prop] = date('Y-m-d');
+            } else {
+                $data[':' . $prop] = $value;
+            }
+            $sets[] = $prop;
+        }
+        $sql = 'INSERT INTO ' . static::$table . ' (' . implode(',', $sets) . ') 
+        VALUES (' . implode(',', array_keys($data)) . ')';
+        $db = new DB();
+        $db->execute($sql, $data);
+    }
+
 }
