@@ -8,7 +8,7 @@ class DB
 
     public function __construct()
     {
-        $config = new Config;
+        $config = Config::getInstance();
         $this->dbh = new \PDO($config->data['db']['dsn'], $config->data['db']['user'], $config->data['db']['password']);
     }
 
