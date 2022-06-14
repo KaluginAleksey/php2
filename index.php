@@ -2,7 +2,14 @@
 
 require_once __DIR__ . '/autoload.php';
 
-$news = \App\Article::findLast();
+$view = new \App\View();
+$view->news = \App\Article::findLast();
 
-include __DIR__ . '/templates/index.php';
+$view->display(__DIR__ . '/templates/index.php');
+
+
+
+
+
+
 

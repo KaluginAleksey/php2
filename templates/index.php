@@ -9,7 +9,9 @@
 </head>
 <body>
 <a href="/php2/Controllers/admin.php">Админка</a>
-<?php foreach ($news as $article): ?>
+
+<?php foreach ($this->news as $article): ?>
+    <?php /** @var \App\Article $article */ ?>
     <a href="/php2/article.php?id=<?php echo $article->id; ?>">
         <h3><?php echo $article->title; ?></h3>
     </a>
