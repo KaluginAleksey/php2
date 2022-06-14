@@ -16,6 +16,10 @@
         <h3><?php echo $article->title; ?></h3>
     </a>
     <p><?php echo mb_substr($article->text, 0, 300) . '...' ?></p>
+    <?php if (isset($article->author->name)): ?>
+        <p><?php echo $article->author->name; ?></p>
+    <?php endif; ?>
+
 <?php endforeach; ?>
 </body>
 </html>
