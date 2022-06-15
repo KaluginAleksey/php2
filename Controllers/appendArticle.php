@@ -9,7 +9,6 @@ if ((!empty($_POST['title'])) && (!empty($_POST['text']))) {
     $article->text = $_POST['text'];
     $article->author = $_POST['author'];
     $article->date = $_POST['date'];
-
     $article->save();
 }
 

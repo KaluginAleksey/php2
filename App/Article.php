@@ -11,11 +11,11 @@ class Article extends Model
     public string $author;
     public string $date;
 
-    public static function findLast()
+    public static function findLast($qt)
     {
         $db = new DB();
         $data = $db->query(
-            'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT 3',
+            'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT ' . $qt,
             [],
             static::class
         );
