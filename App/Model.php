@@ -69,6 +69,7 @@ abstract class Model
         $db = new DB();
         $db->execute($sql, $data);
         $this->id = $db->lastInsertId();
+
     }
 
     public function save()
