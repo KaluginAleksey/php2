@@ -10,7 +10,6 @@ if (isset($_GET['id']) & $_GET['id'] != '') {
         header('Location: /php2/');
         exit();
     }
-    include __DIR__ . '/templates/article.php';
 } else {
     header('Location: /php2/');
     exit();
