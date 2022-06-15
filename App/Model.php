@@ -68,6 +68,7 @@ abstract class Model
         VALUES (' . implode(',', array_keys($data)) . ')';
         $db = new DB();
         $db->execute($sql, $data);
+        $this->id = $db->lastInsertId();
     }
 
     public function save()
