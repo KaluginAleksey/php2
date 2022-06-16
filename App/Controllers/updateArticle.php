@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../autoload.php';
+require_once __DIR__ . '/../../autoload.php';
 
 if (!empty($_GET['id'])) {
     $article = \App\Article::findById($_GET['id']);
