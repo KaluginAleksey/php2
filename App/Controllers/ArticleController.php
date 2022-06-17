@@ -8,7 +8,7 @@ use App\Article;
 class ArticleController extends AbstractController
 {
 
-    function action()
+    protected function action()
     {
         $article = $this->view->article = Article::findById($_GET['id']);
         if ($article) {
@@ -17,4 +17,5 @@ class ArticleController extends AbstractController
             header('Location:/');
         }
     }
+
 }

@@ -10,4 +10,4 @@ if (!class_exists($ctrlClass)) {
 }
 
 $ctrl = new $ctrlClass;
-$ctrl->action();
+$ctrl->dispatcher();

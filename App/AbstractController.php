@@ -11,5 +11,19 @@ abstract class AbstractController
         $this->view = new View();
     }
 
-    abstract function action();
+    public function access(): bool
+    {
+        return true;
+    }
+
+    public function dispatcher()
+    {
+        if ($this->access()) {
+            $this->action();
+        } else {
+            die('Доступ закрыт');
+        }
+    }
+
+    abstract protected function action();
 }
