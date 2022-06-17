@@ -10,6 +10,7 @@
 </head>
 <body>
 <a href="/php2/">На главную</a>
+<?php $article = $this->article; ?>
 <h3><?php echo $article->title; ?></h3>
 <p><?php echo $article->text; ?></p>
 <?php if (isset($article->author->name)): ?>

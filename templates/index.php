@@ -12,7 +12,7 @@
 
 <?php foreach ($this->news as $article): ?>
     <?php /** @var \App\Article $article */ ?>
-    <a href="/php2/article.php?id=<?php echo $article->id; ?>">
+    <a href="/php2/index.php?ctrl=ArticleController&id=<?php echo $article->id; ?>">
         <h3><?php echo $article->title; ?></h3>
     </a>
     <p><?php echo mb_substr($article->text, 0, 300) . '...' ?></p>
