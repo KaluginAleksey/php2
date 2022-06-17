@@ -10,11 +10,11 @@ class ArticleController extends AbstractController
 
     protected function action()
     {
-        $article = $this->view->article = Article::findById($_GET['id']);
-        if ($article) {
+        $this->view->article = Article::findById($_GET['id']);
+        if ($this->view->article) {
             $this->view->display(__DIR__ . '/../../templates/article.php');
         } else {
-            header('Location:/');
+            header('Location:/php2/');
         }
     }
 

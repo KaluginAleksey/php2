@@ -8,10 +8,10 @@
     <title>Редактирование</title>
 </head>
 <body>
-<form action="/php2/Controllers/updateArticle.php?id=<?php echo $article->id; ?>" method="post">
+<?php $article = $this->article; ?>
+<form action="/php2/index.php?ctrl=UpdateArticleController&id=<?php echo $article->id; ?>" method="post">
     <input type="text" name="title" size="200" value="<?php echo $article->title; ?>"><br>
     <textarea name="text" cols="193" rows="50"><?php echo $article->text; ?></textarea><br>
-    <input type="text" name="author" size="50" value="<?php echo $article->author; ?>"><br>
     <input type="date" name="date" value="<?php echo $article->date; ?>">
     <input type="submit" value="Отправить">
 </form>

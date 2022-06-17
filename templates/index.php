@@ -8,7 +8,7 @@
     <title>News</title>
 </head>
 <body>
-<a href="/php2/Controllers/admin.php">Админка</a>
+<a href="/php2/index.php?ctrl=AdminController">Админка</a>
 
 <?php foreach ($this->news as $article): ?>
     <?php /** @var \App\Article $article */ ?>

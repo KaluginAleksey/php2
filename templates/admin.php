@@ -9,13 +9,13 @@
 </head>
 <body>
 <a href="/php2/">На главную</a>
-<?php foreach ($news as $article): ?>
-    <a href="/php2/article.php?id=<?php echo $article->id; ?>">
+<?php foreach ($this->news as $article): ?>
+    <a href="/php2/index.php?ctrl=ArticleController&id=<?php echo $article->id; ?>">
         <h3><?php echo $article->title; ?></h3>
     </a>
     <p><?php echo mb_substr($article->text, 0, 300) . '...' ?></p>
-    <a href="/php2/Controllers/change.php?id=<?php echo $article->id; ?>">Изменить</a>
-    <a href="/php2/Controllers/delete.php?id=<?php echo $article->id; ?>">Удалить</a>
+    <a href="/php2/index.php?ctrl=ChangeArticleController&id=<?php echo $article->id; ?>">Изменить</a>
+    <a href="/php2/index.php?ctrl=DeleteArticleController&id=<?php echo $article->id; ?>">Удалить</a>
 <?php endforeach; ?>
 <a href="/php2/templates/append.php">Добавить новую статью</a>
 </body>
