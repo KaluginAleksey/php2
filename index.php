@@ -1,5 +1,8 @@
 <?php
 
+use App\Exceptions\DBException;
+use App\Exceptions\Exception404;
+
 require_once __DIR__ . '/autoload.php';
 
 $ctrlName = $_GET['ctrl'] ?? 'IndexController';
@@ -12,7 +15,7 @@ if (!class_exists($ctrlClass)) {
 try {
     $ctrl = new $ctrlClass;
     $ctrl->dispatcher();
-} catch (\App\Exceptions\DBException $exception) {
+} catch (DBException|Exception404 $exception) {
     $view = new \App\View();
     $view->exp = $exception;
     $view->display(__DIR__ . '/templates/exception.php');

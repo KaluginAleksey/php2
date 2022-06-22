@@ -9,6 +9,7 @@
 </head>
 <body>
 <a href="/php2/">На главную</a>
+<?php /** @var \App\Article $news */ ?>
 <?php foreach ($news as $article): ?>
     <a href="/php2/article.php?id=<?php echo $article->id; ?>">
         <h3><?php echo $article->title; ?></h3>
