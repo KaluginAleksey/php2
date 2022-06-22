@@ -16,7 +16,7 @@
     </a>
     <p><?php echo mb_substr($article->text, 0, 300) . '...' ?></p>
     <a href="/php2/Controllers/change.php?id=<?php echo $article->id; ?>">Изменить</a>
-    <a href="/php2/Controllers/delete.php?id=<?php echo $article->id; ?>">Удалить</a>
+    <a href="/php2/App/Controllers/delete.php?id=<?php echo $article->id; ?>">Удалить</a>
 <?php endforeach; ?>
 <a href="/php2/templates/append.php">Добавить новую статью</a>
 </body>

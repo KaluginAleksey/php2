@@ -2,15 +2,13 @@
 
 require_once __DIR__ . '/../../autoload.php';
 
-if ((!empty($_POST['title'])) && (!empty($_POST['text']))) {
-
+try {
     $article = new \App\Article();
-    $article->title = $_POST['title'];
-    $article->text = $_POST['text'];
-    $article->date = $_POST['date'];
-
+    $article->fill($_POST);
     $article->save();
+} catch (\App\Exceptions\MultiException $exceptions) {
+    $view = new \App\View();
+    $view->exps = $exceptions;
+    $view->display(__DIR__ . '/../../templates/exceptions.php');
 }
 
-header('Location:/php2/');
-exit();

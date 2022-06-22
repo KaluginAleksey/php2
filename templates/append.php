@@ -8,10 +8,9 @@
     <title>Редактирование</title>
 </head>
 <body>
-<form action="/php2/Controllers/appendArticle.php" method="post">
+<form action="/php2/App/Controllers/appendArticle.php" method="post">
     <input type="text" name="title" size="200"><br>
     <textarea name="text" cols="193" rows="50"></textarea><br>
-    <input type="text" name="author" size="50"><br>
     <input type="date" name="date">
     <input type="submit" value="Отправить">
 </form>

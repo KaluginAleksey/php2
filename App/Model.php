@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\Exceptions\Exception404;
+use App\Exceptions\MultiException;
+
 abstract class Model
 {
 
@@ -81,7 +84,7 @@ abstract class Model
         }
     }
 
-    public function delete()
+    public function delete(): void
     {
         $sql = 'DELETE FROM ' . static::$table . ' WHERE id=:id';
         $db = new DB();
@@ -89,4 +92,22 @@ abstract class Model
 
     }
 
+    public function fill(array $data): void
+    {
+        $exceptions = new MultiException();
+
+        foreach ($data as $key => $value) {
+            if (property_exists($this, $key)) {
+                if (empty($data[$key])) {
+                    $exceptions->add(new \Exception('Поле пустое: ' . $key));
+                }
+                $this->$key = $data[$key];
+            }
+        }
+        if (count($exceptions->all()) > 0) {
+            throw $exceptions;
+        }
+
+
+    }
 }
