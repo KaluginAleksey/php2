@@ -2,20 +2,36 @@
 
 namespace App;
 
+use App\Exceptions\DBException;
+
 class DB
 {
     protected \PDO $dbh;
 
+    /**
+     * @throws DBException
+     */
     public function __construct()
     {
         $config = Config::getInstance();
-        $this->dbh = new \PDO($config->data['db']['dsn'], $config->data['db']['user'], $config->data['db']['password']);
+        try {
+            $this->dbh = new \PDO($config->data['db']['dsn'], $config->data['db']['user'], $config->data['db']['password']);
+        } catch (\PDOException $exception) {
+            throw new DBException('Ошибка БД');
+        }
     }
 
+    /**
+     * @throws DBException
+     */
     public function query(string $sql, array $data = [], string $class = \stdClass::class): array|false
     {
         $sth = $this->dbh->prepare($sql);
-        $sth->execute($data);
+        try {
+            $sth->execute($data);
+        } catch (\PDOException $exception) {
+            throw new DBException('Неверный запрос SQL');
+        }
         return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
     }
 

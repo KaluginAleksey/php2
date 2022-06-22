@@ -14,7 +14,7 @@ class ArticleController extends AbstractController
         if ($article) {
             $this->view->display(__DIR__ . '/../../templates/article.php');
         } else {
-            header('Location:/');
+            header('Location:/php2/');
         }
     }
 

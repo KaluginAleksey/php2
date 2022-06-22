@@ -9,5 +9,11 @@ if (!class_exists($ctrlClass)) {
     die('ERROR: Контроллер не существует!');
 }
 
-$ctrl = new $ctrlClass;
-$ctrl->dispatcher();
+try {
+    $ctrl = new $ctrlClass;
+    $ctrl->dispatcher();
+} catch (\App\Exceptions\DBException $exception) {
+    $view = new \App\View();
+    $view->exp = $exception;
+    $view->display(__DIR__ . '/templates/exception.php');
+}
