@@ -17,5 +17,8 @@
     <p><?php echo $article->author->name; ?></p>
 <?php endif; ?>
 <p><?php echo $article->date; ?></p>
+<footer>
+    Потребление ресурсов <?php echo $this->resource; ?>
+</footer>
 </body>
 </html>

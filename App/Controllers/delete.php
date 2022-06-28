@@ -10,3 +10,4 @@ if (!empty($_GET['id'])) {
 }
 
 header('Location:/php2/');
+exit();
