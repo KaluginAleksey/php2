@@ -92,16 +92,29 @@ abstract class Model
 
     }
 
+    /**
+     * @throws MultiException
+     */
     public function fill(array $data): void
     {
         $exceptions = new MultiException();
 
         foreach ($data as $key => $value) {
             if (property_exists($this, $key)) {
-                if (empty($data[$key])) {
-                    $exceptions->add(new \Exception('Поле пустое: ' . $key));
+//                if (empty($data[$key])) {
+//                    $exceptions->add(new \Exception('Поле пустое: ' . $key));
+//                }
+//                $this->$key = $data[$key];
+
+                $methodName = 'validate' . ucfirst($key);
+                if (method_exists($this, $methodName)) {
+                    if (false != $this->$methodName($value)) {
+                        $this->$key = $value;
+                    } else {
+                        $exceptions->add(new \Exception('Поле не прошло валидацию: ' . $key));
+                    }
                 }
-                $this->$key = $data[$key];
+
             }
         }
         if (count($exceptions->all()) > 0) {

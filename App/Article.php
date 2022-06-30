@@ -46,4 +46,10 @@ class Article extends Model
         }
     }
 
+    public function validateText($title)
+    {
+        var_dump($title);
+        die;
+    }
+
 }
