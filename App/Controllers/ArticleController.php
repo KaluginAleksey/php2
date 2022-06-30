@@ -15,7 +15,7 @@ class ArticleController extends AbstractController
     protected function action()
     {
         $article = $this->view->article = Article::findById($_GET['id']);
-        if ($article) {
+        if (false != $article) {
             $this->view->display(__DIR__ . '/../../templates/article.php');
         } else {
             throw new Exception404();
