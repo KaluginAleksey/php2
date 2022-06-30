@@ -11,16 +11,18 @@ class UpdateArticleController extends AbstractController
     protected function action()
     {
         if (!empty($_GET['id'])) {
-            $this->view->article = Article::findById($_GET['id']);
-            if ($this->view->article) {
-                $this->view->article->title = $_POST['title'];
-                $this->view->article->text = $_POST['text'];
-                $this->view->article->date = $_POST['date'];
+            $this->article = Article::findById($_GET['id']);
+            if ($this->article) {
+                $this->article->title = $_POST['title'];
+                $this->article->text = $_POST['text'];
+                $this->article->date = $_POST['date'];
 
-                $this->view->article->save();
+                $this->article->save();
                 header('Location:/php2/index.php?ctrl=AdminController');
+                exit();
             } else {
                 header('Location:/php2/index.php?ctrl=AdminController');
+                exit();
             }
 
         }
