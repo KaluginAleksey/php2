@@ -11,4 +11,6 @@ try {
     $view->exps = $exceptions;
     $view->display(__DIR__ . '/../../templates/exceptions.php');
 }
+header('Location:/php2/');
+exit();
 
