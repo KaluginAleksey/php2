@@ -46,10 +46,27 @@ class Article extends Model
         }
     }
 
-    public function validateText($title)
+    public function validateTitle($title): bool
     {
-        var_dump($title);
-        die;
+        if (strlen($title) > 3) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function validateDate($date): bool
+    {
+        return time() - strtotime($date) > 0;
+    }
+
+    public function validateText($text): bool
+    {
+        if (strlen($text) > 20) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

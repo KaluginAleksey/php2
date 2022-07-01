@@ -101,17 +101,12 @@ abstract class Model
 
         foreach ($data as $key => $value) {
             if (property_exists($this, $key)) {
-//                if (empty($data[$key])) {
-//                    $exceptions->add(new \Exception('Поле пустое: ' . $key));
-//                }
-//                $this->$key = $data[$key];
-
                 $methodName = 'validate' . ucfirst($key);
                 if (method_exists($this, $methodName)) {
                     if (false != $this->$methodName($value)) {
                         $this->$key = $value;
                     } else {
-                        $exceptions->add(new \Exception('Поле не прошло валидацию: ' . $key));
+                        $exceptions->add(new \Exception('Поле ' . $key . ' не прошло валидацию: '));
                     }
                 }
 
@@ -120,7 +115,5 @@ abstract class Model
         if (count($exceptions->all()) > 0) {
             throw $exceptions;
         }
-
-
     }
 }
