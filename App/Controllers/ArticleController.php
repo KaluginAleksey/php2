@@ -22,7 +22,7 @@ class ArticleController extends AbstractController
 
         $article = $this->view->article = Article::findById($_GET['id']);
         $this->view->resource = $resource->resourceUsage($timer->stop());
-        if ($article) {
+        if (false != $article) {
             $this->view->display(__DIR__ . '/../../templates/article.php');
         } else {
             throw new Exception404();
