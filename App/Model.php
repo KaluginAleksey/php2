@@ -2,8 +2,9 @@
 
 namespace App;
 
-use App\Exceptions\Exception404;
-use App\Exceptions\MultiException;
+use Profit\MultiException\MultiException;
+
+include __DIR__ . '/../autoload.php';
 
 abstract class Model
 {
