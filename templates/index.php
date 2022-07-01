@@ -21,5 +21,8 @@
     <?php endif; ?>
 
 <?php endforeach; ?>
+<footer>
+    Потребление ресурсов <?php echo $this->resource; ?>
+</footer>
 </body>
 </html>
