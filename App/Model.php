@@ -56,9 +56,6 @@ abstract class Model
 
             if ('id' == $prop) {
                 continue;
-            }
-            if ('date' == $prop) {
-                $data[':' . $prop] = date('Y-m-d');
             } else {
                 $data[':' . $prop] = $value;
             }
