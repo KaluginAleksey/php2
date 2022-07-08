@@ -14,7 +14,7 @@ class Article extends Model
     public static function findLast($qt)
     {
         $db = new DB();
-        $data = $db->query(
+        $data = $db->queryEach(
             'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT ' . $qt,
             [],
             static::class

@@ -35,6 +35,20 @@ class DB
         return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
     }
 
+    public function queryEach(string $sql, array $data = [], string $class = \stdClass::class): \Generator
+    {
+        $sth = $this->dbh->prepare($sql);
+        try {
+            $sth->execute($data);
+        } catch (\PDOException $exception) {
+            throw new DBException('Неверный запрос SQL');
+        }
+        $sth->setFetchMode(\PDO::FETCH_CLASS, $class);
+        while($res = $sth->fetch()) {
+            yield $res;
+        }
+    }
+
     public function execute(string $sql, array $data = []): bool
     {
         $sth = $this->dbh->prepare($sql);
