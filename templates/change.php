@@ -8,6 +8,7 @@
     <title>Редактирование</title>
 </head>
 <body>
+<?php /** @var \App\Article $article */ ?>
 <form action="/php2/Controllers/updateArticle.php?id=<?php echo $article->id; ?>" method="post">
     <input type="text" name="title" size="200" value="<?php echo $article->title; ?>"><br>
     <textarea name="text" cols="193" rows="50"><?php echo $article->text; ?></textarea><br>

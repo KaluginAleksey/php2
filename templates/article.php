@@ -18,7 +18,10 @@
 <?php endif; ?>
 <p><?php echo $article->date; ?></p>
 <footer>
-    Потребление ресурсов <?php echo $this->resource; ?>
+    <?php
+    $resource = $this->resource->resourceUsage($this->timer->stop())
+    ?>
+    Потребление ресурсов <?php echo $resource; ?>
 </footer>
 </body>
 </html>

@@ -17,7 +17,8 @@ class IndexController extends AbstractController
         $resource = new ResourceUsageFormatter();
 
         $this->view->news = Article::findLast(3);
-        $this->view->resource = $resource->resourceUsage($timer->stop());
+        $this->view->timer = $timer;
+        $this->view->resource = $resource;
         $this->view->display(__DIR__ . '/../../templates/index.php');
     }
 }

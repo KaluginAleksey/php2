@@ -21,8 +21,9 @@ class ArticleController extends AbstractController
         $resource = new ResourceUsageFormatter();
 
         $article = $this->view->article = Article::findById($_GET['id']);
-        $this->view->resource = $resource->resourceUsage($timer->stop());
-        if ($article) {
+        $this->view->timer = $timer;
+        $this->view->resource = $resource;
+        if (false != $article) {
             $this->view->display(__DIR__ . '/../../templates/article.php');
         } else {
             throw new Exception404();
