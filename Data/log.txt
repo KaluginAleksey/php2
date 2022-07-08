@@ -3,6 +3,4 @@
 2022-06-23 13:58:11 - 404 | Ошибка 404 - не найдено | C:\OpenServer\domains\profit\php2\App\Controllers\ArticleController.php | 21
 2022-06-23 13:58:39 - 0 | Ошибка БД | C:\OpenServer\domains\profit\php2\App\DB.php | 20
 2022-06-23 13:59:11 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
-2022-06-30 15:21:02 - 404 | Ошибка 404 - не найдено | C:\OpenServer\domains\profit\php2\App\Controllers\ArticleController.php | 21
-2022-06-30 15:23:34 - 404 | Ошибка 404 - не найдено | C:\OpenServer\domains\profit\php2\App\Controllers\ArticleController.php | 21
 2022-06-28 21:51:07 - 0 | Ошибка БД | C:\OpenServer\domains\profit\php2\App\DB.php | 20
