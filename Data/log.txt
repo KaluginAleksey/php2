@@ -4,3 +4,27 @@
 2022-06-23 13:58:39 - 0 | Ошибка БД | C:\OpenServer\domains\profit\php2\App\DB.php | 20
 2022-06-23 13:59:11 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
 2022-06-28 21:51:07 - 0 | Ошибка БД | C:\OpenServer\domains\profit\php2\App\DB.php | 20
+2022-07-08 16:10:06 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:10:16 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:10:17 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:10:19 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:13:28 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:15:55 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:15:57 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:16:18 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:18:19 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:18:21 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:19:09 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:19:53 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:20:36 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:20:42 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:20:43 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:21:17 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:21:19 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:21:20 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:21:32 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:21:33 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:21:34 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:23:39 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:24:06 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
+2022-07-08 16:24:10 - 0 | Неверный запрос SQL | C:\OpenServer\domains\profit\php2\App\DB.php | 33
