@@ -35,18 +35,10 @@ class DB
         return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
     }
 
-    /**
-     * @throws DBException
-     */
     public function execute(string $sql, array $data = []): bool
     {
         $sth = $this->dbh->prepare($sql);
-        try {
-            $res = $sth->execute($data);
-        } catch (\PDOException $exception) {
-            throw new DBException('Неверный запрос SQL');
-        }
-        return $res;
+        return $sth->execute($data);
     }
 
     public function lastInsertId()
