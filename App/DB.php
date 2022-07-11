@@ -30,7 +30,7 @@ class DB
         try {
             $sth->execute($data);
         } catch (\PDOException $exception) {
-            throw new DBException('Неверный запрос SQL');
+            throw new DBException('Неверный запрос SQL ');
         }
         return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
     }
@@ -44,7 +44,7 @@ class DB
             throw new DBException('Неверный запрос SQL');
         }
         $sth->setFetchMode(\PDO::FETCH_CLASS, $class);
-        while($res = $sth->fetch()) {
+        while ($res = $sth->fetch()) {
             yield $res;
         }
     }
